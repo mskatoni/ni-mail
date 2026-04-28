@@ -1,16 +1,31 @@
 {
-  "name": "mail-worker",
-  "version": "1.0.0",
-  "description": "Minimal Cloudflare Worker for receiving and reading emails via API",
-  "main": "src/worker.js",
+  "name": "ni-mail",
+  "version": "2.0.1",
+  "private": false,
+  "description": "Minimal Cloudflare Worker for receiving private-domain email over HTTP API; upgraded to Durable Objects + SQLite + R2 with optional send/reply/forward support.",
+  "type": "module",
   "scripts": {
+    "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "dev": "wrangler dev"
+    "check:deploy": "wrangler deploy --dry-run",
+    "smoke": "node scripts/examples.mjs"
   },
   "dependencies": {
-    "postal-mime": "^2.2.9"
+    "postal-mime": "^2.6.1"
   },
   "devDependencies": {
-    "wrangler": "^3.0.0"
-  }
+    "wrangler": "4.83.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "email",
+    "durable-objects",
+    "sqlite",
+    "r2"
+  ],
+  "license": "Apache-2.0"
 }
